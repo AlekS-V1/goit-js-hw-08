@@ -70,7 +70,7 @@ const list = document.querySelector(".gallery");
 const imgGallery = images.map(({ preview, original, description }) =>
     
     `<li class="gallery-item">
-  <a class="gallery-link" href="${original}" onclick="event.preventDefault();">
+  <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
       src="${preview}"
@@ -84,7 +84,12 @@ const imgGallery = images.map(({ preview, original, description }) =>
 
 list.innerHTML = imgGallery;
 
-list.addEventListener("click", function (event) {
+document.querySelectorAll(".gallery-link").forEach((link) => 
+link.addEventListener("click", (event) => {
+  event.preventDefault();
+}));
+
+list.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
       return;
   }
