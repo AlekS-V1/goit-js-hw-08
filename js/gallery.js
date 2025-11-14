@@ -85,7 +85,7 @@ const imgGallery = images.map(({ preview, original, description }) =>
 list.innerHTML = imgGallery;
 
 list.addEventListener("click", (event) => {
-  if (event.target.classList.contains('.gallery-link')) {
+  if (event.target.closest(".gallery-link")) {
     event.preventDefault();
   }
   console.log("Click")
@@ -95,8 +95,9 @@ list.addEventListener("click", (event) => {
   const selectedImage = event.target.dataset.source;
   const imageTittle = event.target.getAttribute("alt");
   
-basicLightbox.create(`<img src="${selectedImage}" width="800" heigtt="600" title="${imageTittle}">`).show();
+basicLightbox.create(`<img src="${selectedImage}" width="800" height="600" title="${imageTittle}">`).show();
 });
+
 
 
 
