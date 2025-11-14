@@ -84,11 +84,6 @@ const imgGallery = images.map(({ preview, original, description }) =>
 
 list.innerHTML = imgGallery;
 
-document.querySelectorAll(".gallery-item").forEach((link) => 
-link.addEventListener("click", (event) => {
-  event.preventDefault();
-}));
-
 list.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
       return;
@@ -99,6 +94,10 @@ list.addEventListener("click", (event) => {
 basicLightbox.create(`<img src="${selectedImage}" width="800" heigtt="600" title="${imageTittle}">`).show();
 });
 
+document.querySelectorAll(".gallery-link").forEach((link) => 
+link.addEventListener("click", (event) => {
+  event.preventDefault();
+}));
 
 
 
