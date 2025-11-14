@@ -84,7 +84,7 @@ const imgGallery = images.map(({ preview, original, description }) =>
 
 list.innerHTML = imgGallery;
 
-document.querySelectorAll(".gallery-link").forEach((link) => 
+document.querySelectorAll(".gallery-item").forEach((link) => 
 link.addEventListener("click", (event) => {
   event.preventDefault();
 }));
